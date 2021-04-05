@@ -1,67 +1,80 @@
 <!DOCTYPE html>
 <html lang="zh-Hant-Tw">
+
 <head>
-    
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>樂團介紹</title>
-    <link rel="stylesheet3" href="style.css">
-    <link rel="stylesheet" media="mediatype and|not|only (expressions)" href="https://www.youtube.com/watch?v=VTGp2ZGOs6I&list=RDvJO4Fg_iEss&index=5">
+    <title>Linkin Park</title>
     <style>
-    @media screen and (min-width: 480px) {
-  body {
-    background-color: lightgreen;
-  }
-}
-        body ::before
-        {
- content: "";
- position: fixed;
- top: 0;
- left: 0;
- width: 100%;
- height: 100%;
- z-index: -1;
- background: url(https://i0.wp.com/hackazine-tw.com/wp-content/uploads/2018/01/1400x.png?fit=594%2C594&ssl=1);
-
-
-    }
-    header{
-        background-color: aqua;
-     grid-column: 1/-1;
-    }
-    main{
-        background-color: darkgray;
-        display:flex;
-        justify-content: center;
-        align-items: center;
-    }
-    main div{
-        border: 1px;
-    }
-    aside{
-        background-color: darksalmon;
-    }
-    footer{
-        background-color: grey;
-        justify-self:baseline;
-          }
-
-
+        body {
+            border-width: 10px;
+            background-color: white;
+            display: grid;
+            font-size: 2rem;
+            min-height: 100vh;
+            grid-template-columns: 1fr 5fr 1fr;
+            grid-template-rows: auto 1fr minmax(100px, max-content);
+        }
+        
+        header {
+            grid-column: 1/-1;
+            background-color: greenyellow;
+        }
+        
+        article {
+            background-color: fuchsia;
+        }
+        
+        main {
+            background-image: url("https://upload.wikimedia.org/wikipedia/zh/6/66/Linkin_Park_Band_Logo.jpg");
+            
+        }
+        
+        #font {
+            font-style: italic;
+            color: rgb(68, 0, 255);
+        }
+        
+        .word {
+            color: red;
+            font-style: italic;
+        }
+        
+        th {
+            background-color: yellow;
+            color: red;
+        }
+        
+        td {
+            background-color: rgb(0, 255, 34);
+            color: red;
+        }
+        
+        table {
+            border-radius: 10px;
+        }
+        
+        aside {
+            background-color: fuchsia;
+    
+        }
+        footer {
+            background-color:gray;
+            grid-column: 1/-1;
+        }
     </style>
 </head>
 
 <body>
-    <header>header</header>
+    <header align="center">個人課程時段</header>
+    <article></article>
     <main>
-     <div>1</div>
-     <div>2</div>
-     <div>3</div>
     </main>
-    <aside>aside</aside>
-    <footer>footer</footer>
+    <aside></aside>
+    <footer>
+    </footer>
 
-    
 </body>
+
 </html>
