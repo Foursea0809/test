@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Linkin Park</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <style>
         body {
             border-width: 10px;
@@ -13,71 +14,73 @@
             display: grid;
             font-size: 2rem;
             min-height: 100vh;
-            grid-template-columns: 1fr 5fr 1fr;
-            grid-template-rows: 50px 1fr minmax(100px, max-content);
-        }
-        
-        header {
-            background-color: black;
-            grid-column: 1/-1;
-            font-style:italic ;
-            text-align: center;
-            vertical-align:middle;
+            grid-template-columns: 1fr 2fr 2fr 2fr;
+            grid-template-rows: 50px 1fr 1fr minmax(100px, max-content);
         }
         
         article {
-            background-color: fuchsia;
+            background-color: black;
             text-align: center;
+            grid-area: 1/1/-1/2;
         }
         
-        main {
-            background-image: url(1400x.png);
-            background-repeat:no-repeat;
-            background-size: contain;
-            background-attachment: scroll;
-            
+        article img {}
+        
+        #carousel {
+            grid-area: 2/3/3/4;
+            interval
         }
         
-        main p{
-            color:black;
-        }
-        aside {
-            background-image: url("https://upload.wikimedia.org/wikipedia/zh/6/66/Linkin_Park_Band_Logo.jpg");
-            background-repeat: no-repeat;
-            background-position: top 50px center;
-            background-size:contain;
-            background-attachment:scroll;
-            text-align: center;
-            
-        }
+        
         footer {
-            background-color:gray;
-            grid-column: 1/-1;
+            background-color: gray;
+            grid-area: 4/2/5/5;
         }
     </style>
 </head>
 
 <body>
-    <header><span style="color:white">Linkin Park</span></header>
     <article>
-        <p><a href="index.html" >首頁</a></p>
-        <p><a href="group/index.html" >樂團成員</a></p>
-        <p><a href="ex.music/index.html" >音樂介紹</a></p>
+        <p><img src="https://upload.wikimedia.org/wikipedia/zh/6/66/Linkin_Park_Band_Logo.jpg"></span>
+        </p>
+        <p><a href="index.html" style="color: white;">首頁</a></p>
+        <p><a href="band/index.html" style="color: white;">樂團介紹</a></p>
+        <p><a href="group/index.html" style="color: white;">樂團成員</a></p>
+        <p><a href="ex.music/index.html" style="color: white;">音樂介紹</a></p>
     </article>
-    <main>
-        <p>聯合公園（Linkin Park）是一組來自美國加州的新金屬樂團。</p>
-        <p>聯合公園在2000年以首張專輯《混合理論》在主流音樂市場上獲得成功，該專輯銷售量超過2,400萬張，樂團接下來發行的《天空之城—美特拉》專輯也取得成功，在2003年的美國告示牌二百大專輯榜上排名第一。</p>
-        <p>聯合公園的第三張專輯《末日警鐘 毀滅·新生》不再是新金屬的風格，而走向主流，但仍然受到了歌迷的歡迎，截至2009年10月銷售超過800萬張。</p>
-        <p>2010年，聯合公園全球發行的第四張專輯《烈日千陽》延續上一張的概念，並加入了更多的電子音樂元素。</p>
-        <p>2012年，聯合公園推出的第五張專輯《生命 進化 原點》結合了過往各張專輯的特色，於6月26日全球發行。</p>
-        <p>2014年。聯合公園推出了第六張專輯《獵捕行動》則回歸了最初風格。</p>
-        <p>2017年，聯合公園發布了他們的第七張專輯《光芒再現》，曲風偏向流行音樂風格。</p>
-    </main>
-    <aside><span style="background-color: turquoise">聯合公園</span></aside>
-    <footer>
-        
-    </footer>
 
+    <div id="carousel" class="carousel slide carousel-fade" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-interval="5000">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQK47z_wtj4FHdRmzPnRzYdZi-sdpdAo9Q8g&usqp=CAU" class="d-block w-100" alt="hint-text">
+            </div>
+            <div class="carousel-item" data-interval="5000">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrAeioDG8FXzCN_sNpD8vRHrepSbKggxAlpA&usqp=CAU" class="d-block w-100" alt="hint-text">
+            </div>
+            <div class="carousel-item" data-interval="5000">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpLBIYq3YyPeKkNdU9m1uNzMkoH7yRewcwyg&usqp=CAU" class="d-block w-100" alt="hint-text">
+            </div>
+            <div class="carousel-item" data-interval="5000">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmu_61PMznQVo36fnZzxZilbtebkK1I_h0vg&usqp=CAU" class="d-block w-100" alt="hint-text">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+        
+    </div>
+
+
+    <footer>
+
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
 </body>
 
 </html>
