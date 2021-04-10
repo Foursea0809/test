@@ -7,102 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Linkin Park</title>
     <link rel="stylesheet" href="style.css">
-    <script>
-        const API_KEY = 'AIzaSyDBlmzJZGUO8QAKwdcH8FJPKh64T3b_YjM';
-const API_ID = '491927014195-cve61bomorg41tg8k51n9hv4etpjglne.apps.googleusercontent.com';
-const PLAYLIST_ID = 'PLMC9KNkIncKtPzgY-5rmhvj7fax8fdxoj';
-
-var videoVisible = 0;
-var maxVideoVisible = 50;
-
-const playlistItems = [];
-const playlist = document.getElementsByClassName("playlist")[0];
-
-// From Google API Docs
-function initAPIClient() {
-  gapi.load("client:auth2", function() {
-    gapi.auth2.init({client_id: API_ID});
-    loadClient().then(getPlaylistItems);
-  });  
-};
-
-// From Google API Docs
-function loadClient() {
-  gapi.client.setApiKey(API_KEY);
-  return gapi.client.load("https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest")
-    .then(
-    function() { 
-      console.log("GAPI client loaded for API"); },
-    function(err) { 
-      console.error("Error loading GAPI client for API", err); 
-    });
-}
-
-function getPlaylistItems(pageToken) {
-    return gapi.client.youtube.playlistItems.list({
-      "part": "snippet,contentDetails",
-      "maxResults": 50, // This is the maximum available value, according to the google docs
-      "playlistId": PLAYLIST_ID,
-      pageToken
-    })
-      .then(function(response) {
-      const { items, nextPageToken } = response.result;
-      
-      // The items[] is an array of a playlist items.
-      // nextPageToken - if empty - there are no items left to fetch
-      
-      playlistItems.push(...items);
-      
-      // It's up to you, how to handle the item from playlist. 
-      // Add `onclick` events to navigate to another video, or use another thumbnail image quality 
-      var index = 0;
-      items.forEach(function(item) {
-          const thumbnailItem = createPlaylistItem(item, index);
-          playlist.appendChild(thumbnailItem);
-          index++;
-        });
-      
-      maxVideoVisible = index - 3;
-      
-
-      // Recursively get another portion of items, if there any left
-      if (nextPageToken) {
-        getPlaylistItems(nextPageToken);        
-      }
-    },
-  function(err) { console.error("Execute error", err); });
-}
-
-function createPlaylistItem(i, index) {
-  var changeIndex = index;
-  const item = document.createElement('div');
-  item.classList.add('playlist-item');
-  item.style.background = `url(https://i.ytimg.com/vi/${i.snippet.resourceId.videoId}/mqdefault.jpg) no-repeat center`;
-  item.style.backgroundSize = 'contain';
-  item.id = index.toString();
-  item.addEventListener("click", function(){ 
-    document.getElementById('iframe_yt').src = "https://youtube.com/playlist?list=PL9LkJszkF_Z6bJ82689htd2wch-HVbzCO" + changeIndex.toString();
-  });
-  return item;
-};
-
-// Before doing any action with the API ->
-initAPIClient();
-
-function goUp(){
-  if (videoVisible > 0){
-    videoVisible--;
-    document.getElementById(videoVisible.toString()).style.height = "90px";
-  }
-}
-function goDown(){
-    if (videoVisible < maxVideoVisible){
-      document.getElementById(videoVisible.toString()).style.height = "0px";
-     videoVisible++;    
-  }  
-}
-
-    </script>
     <style>
         body {
             border-width: 10px;
@@ -223,30 +127,14 @@ img:hover, .playlist-item:hover {
     </article>
     
     <main>
-       
+        <!--Embed YouTube Video-->
+<div class="video-container">
+    <iframe  src="https://www.youtube.com/embed/7mrE9P3SDmU" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+   </div>
    
     </main>
     <aside>
-        <div id="root">
-            <iframe 
-                    width="438" 
-                    height="250"         
-                    src="https://www.youtube.com/embed/7mrE9P3SDmU" 
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen="1"
-                    id="iframe_yt"
-                    ></iframe>
-            <div>
-              <div class="center_arrow">
-                <img src="http://aux.iconspalace.com/uploads/drop-down-vector-icon-256.png" width="25px" style="transform: scaleY(-1);" onClick="goUp();"/>
-              </div>
-              <div class="playlist"></div>
-              <div class="center_arrow">
-                <img src="http://aux.iconspalace.com/uploads/drop-down-vector-icon-256.png" width="25px" onClick="goDown();"/>
-                </div>
-            </div>
-          </div>  
+        <iframe  src="https://www.youtube.com/embed/videoseries? list=PL9LkJszkF_Z6bJ82689htd2wch-HVbzCO" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>   
     </aside>
     <footer>
       
