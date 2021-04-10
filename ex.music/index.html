@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <title>Linkin Park</title>
-    <link rel="stylesheet" href="style.css">
     <style>
         body {
             border-width: 10px;
@@ -14,69 +14,49 @@
             display: grid;
             font-size: 2rem;
             min-height: 100vh;
-            grid-template-columns: 1fr 5fr 1fr;
-            grid-template-rows: 50px 1fr minmax(100px, max-content);
-        }
-        
-        header {
-            background-color: black;
-            grid-column: 1/-1;
-            font-style:italic ;
-            text-align: center;
-            vertical-align:middle;
+            grid-template-columns: 1fr 2fr 2fr 2fr;
+            grid-template-rows: 50px 1fr 1fr minmax(50px, max-content);
         }
         
         article {
-            background-color: fuchsia;
+            background-color: black;
             text-align: center;
+            grid-area: 1/1/-1/2;
         }
+
+        article img{}
         
-        main {
-            background-image: url(../1400x.png);
-            background-repeat:no-repeat;
-            background-size: contain;
-            background-attachment: scroll;
+        main{
+            grid-area:1/2/4/5;
         }
-        
-        main p{
-            color:black;
-            
-        }
-        aside {
-            background-image: url("https://upload.wikimedia.org/wikipedia/zh/6/66/Linkin_Park_Band_Logo.jpg");
-            background-repeat: no-repeat;
-            background-position: top 50px center;
-            background-size:contain;
-            background-attachment:scroll;
-            text-align: center;
-            
-        }
+
         footer {
-            background-color:gray;
-            grid-column: 1/-1;
-           
-            
-           
+            background-color: gray;
+            grid-area: 4/2/5/5;
+            text-align:center;
         }
     </style>
 </head>
 
 <body>
-    <header><span style="color:white">Linkin Park</span></header>
     <article>
-        <p><a href="../index.html" >首頁</a></p>
-        <p><a href="../group/index.html" >樂團成員</a></p>
-        <p><a href="index.html" >音樂介紹</a></p>
+        <p><img src="https://upload.wikimedia.org/wikipedia/zh/6/66/Linkin_Park_Band_Logo.jpg"></span></p>
+        <p><a href="../index.html" style="color: white;">首頁</a></p>
+        <p><a href="../band/index.html" style="color: white;">樂團介紹</a></p>
+        <p><a href="../group/index.html" style="color: white;">樂團成員</a></p>
+        <p><a href="index.html" style="color: white;">音樂介紹</a></p>
     </article>
     <main>
- 
-    </main>
-    <aside><span style="background-color: turquoise">聯合公園</span></aside>
-    <footer>
         <audio controls autoplay>
-       <source src="yt1s.com - Linkin Park 聯合公園  One More Light 又一道光芒 華納official HD 高畫質官方中字版.mp3" type="">  
-         </audio>
+            <source src="yt1s.com - Linkin Park 聯合公園  One More Light 又一道光芒 華納official HD 高畫質官方中字版.mp3" type="">  
+              </audio>
+    </main>
+    <footer>
+        <p>本站開站日期:2021/4/13/ | 建置者:翁明揚/馬健軒</p>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
 </body>
 
 </html>
