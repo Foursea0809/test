@@ -81,7 +81,7 @@ function createPlaylistItem(i, index) {
   item.style.backgroundSize = 'contain';
   item.id = index.toString();
   item.addEventListener("click", function(){ 
-    document.getElementById('iframe_yt').src = "https://www.youtube.com/embed?listType=playlist&list=PLMC9KNkIncKtPzgY-5rmhvj7fax8fdxoj&autoplay=1&index=" + changeIndex.toString();
+    document.getElementById('iframe_yt').src = "https://youtube.com/playlist?list=PL9LkJszkF_Z6bJ82689htd2wch-HVbzCO" + changeIndex.toString();
   });
   return item;
 };
