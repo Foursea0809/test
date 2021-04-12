@@ -14,8 +14,8 @@
             display: grid;
             font-size: 2rem;
             min-height: 100vh;
-            grid-template-columns: 1fr 2fr 2fr 2fr;
-            grid-template-rows: 0px 1fr 1fr minmax(50px, max-content);
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-rows: 50px 1fr 1fr minmax(50px, max-content);
         }
         
         article {
@@ -27,8 +27,10 @@
       
         
         main {
-            grid-area: 1/2/4/5;
-        }
+            
+            grid-area: 1/4/4/2;
+                   }
+        
         
         footer {
             background-color: gray;
@@ -38,8 +40,9 @@
         }
         
         .video-container {
-            position: relative;
-            padding-bottom: 56.25%;
+           
+            position:relative;
+            padding-bottom: 50.25%;
             padding-top: 30px;
             height: 0;
             overflow: hidden;
@@ -48,7 +51,7 @@
         .video-container iframe,
         .video-container object,
         .video-container embed {
-            position: absolute;
+            position:absolute;
             top: 0;
             left: 0;
             width: 100%;
@@ -57,7 +60,7 @@
         }
         
         #root {
-            display: grid;
+            display:grid;
         }
         
     </style>
@@ -77,10 +80,23 @@
         <!--Embed YouTube Video-->
         <div class="video-container">
             <iframe src="https://www.youtube.com/embed/7mrE9P3SDmU" title="One More Light " allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        
         </div>
+        <hr size="5px" align="center" width="100%">
         <div class="video-container">
             <iframe src="https://www.youtube.com/embed/cnScTPwd0Xc" title="Burned out"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
+        <hr size="5px" align="center" width="100%">
+        <div class="video-container">
+        <iframe  src="https://www.youtube.com/embed/eVTXPUF4Oz4" title="in the end" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <hr size="5px" align="center" width="100%">
+    <div class="video-container">
+        <iframe  src="https://www.youtube.com/embed/ysSxxIqKNN0" title="new divide"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+
+
     </main>
     <footer>
         <p>本站開站日期:2021/4/13/ | 建置者:翁明揚/馬健軒</p>
