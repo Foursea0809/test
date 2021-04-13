@@ -16,6 +16,8 @@
             min-height: 100vh;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             grid-template-rows: 50px 1fr 1fr minmax(50px, max-content);
+            
+            
         }
         
         article {
@@ -40,7 +42,11 @@
         }
         
         .video-container {
-           
+            width: 1000px;
+            height: 500px;
+            border: solid black; border-style:hidden;
+             margin:8px;
+            
             position:relative;
             padding-bottom: 50.25%;
             padding-top: 30px;
@@ -51,6 +57,7 @@
         .video-container iframe,
         .video-container object,
         .video-container embed {
+         
             position:absolute;
             top: 0;
             left: 0;
@@ -78,8 +85,8 @@
 
     <main>
         <!--Embed YouTube Video-->
-        <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/7mrE9P3SDmU" title="One More Light " allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="video-container" >
+            <iframe src="https://www.youtube.com/embed/7mrE9P3SDmU" title="One More Light " allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"allowfullscreen></iframe>
         
         </div>
         <hr size="5px" align="center" width="100%">
